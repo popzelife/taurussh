@@ -1,0 +1,445 @@
+body {
+  font-size:62.5%;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  background-color: #1A1A1A;
+  text-align: center;
+}
+
+.App-logo {
+  height: 50vh;
+  padding: 10vh;
+}
+
+.App-header {
+  height: 100vh;
+  color: white;
+}
+
+h1, h2 {
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+@keyframes pulse {
+  0%,
+  50%,
+  100% {
+      padding: 0.25em;
+      background-color: #a7dbd8;
+  }
+
+  25%,
+  75% {
+      padding: 0;
+      background-color: white;
+  }
+}
+
+@keyframes wave {
+  50% {
+      height: 22em;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 32em;
+  height: 32em;
+  margin: auto;
+}
+
+.item {
+  position: relative;
+  width: 0.125em;
+  height: 10em;
+  background-color: currentColor;
+  animation: wave 3s infinite ease-in-out;
+}
+.item item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.item:nth-child(even) {
+  align-self: flex-end;
+}
+.item:nth-child(even):before {
+  top: 0;
+  bottom: auto;
+}
+.item:nth-child(1) {
+  animation-delay: -50ms;
+}
+.item:nth-child(1):before {
+  animation-delay: -50ms;
+}
+.item:nth-child(2) {
+  animation-delay: -100ms;
+}
+.item:nth-child(2):before {
+  animation-delay: -100ms;
+}
+.item:nth-child(3) {
+  animation-delay: -150ms;
+}
+.item:nth-child(3):before {
+  animation-delay: -150ms;
+}
+.item:nth-child(4) {
+  animation-delay: -200ms;
+}
+.item:nth-child(4):before {
+  animation-delay: -200ms;
+}
+.item:nth-child(5) {
+  animation-delay: -250ms;
+}
+.item:nth-child(5):before {
+  animation-delay: -250ms;
+}
+.item:nth-child(6) {
+  animation-delay: -300ms;
+}
+.item:nth-child(6):before {
+  animation-delay: -300ms;
+}
+.item:nth-child(7) {
+  animation-delay: -350ms;
+}
+.item:nth-child(7):before {
+  animation-delay: -350ms;
+}
+.item:nth-child(8) {
+  animation-delay: -400ms;
+}
+.item:nth-child(8):before {
+  animation-delay: -400ms;
+}
+.item:nth-child(9) {
+  animation-delay: -450ms;
+}
+.item:nth-child(9):before {
+  animation-delay: -450ms;
+}
+.item:nth-child(10) {
+  animation-delay: -500ms;
+}
+.item:nth-child(10):before {
+  animation-delay: -500ms;
+}
+.item:nth-child(11) {
+  animation-delay: -550ms;
+}
+.item:nth-child(11):before {
+  animation-delay: -550ms;
+}
+.item:nth-child(12) {
+  animation-delay: -600ms;
+}
+.item:nth-child(12):before {
+  animation-delay: -600ms;
+}
+.item:nth-child(13) {
+  animation-delay: -650ms;
+}
+.item:nth-child(13):before {
+  animation-delay: -650ms;
+}
+.item:nth-child(14) {
+  animation-delay: -700ms;
+}
+.item:nth-child(14):before {
+  animation-delay: -700ms;
+}
+.item:nth-child(15) {
+  animation-delay: -750ms;
+}
+.item:nth-child(15):before {
+  animation-delay: -750ms;
+}
+.item:nth-child(16) {
+  animation-delay: -800ms;
+}
+.item:nth-child(16):before {
+  animation-delay: -800ms;
+}
+.item:nth-child(17) {
+  animation-delay: -850ms;
+}
+.item:nth-child(17):before {
+  animation-delay: -850ms;
+}
+.item:nth-child(18) {
+  animation-delay: -900ms;
+}
+.item:nth-child(18):before {
+  animation-delay: -900ms;
+}
+.item:nth-child(19) {
+  animation-delay: -950ms;
+}
+.item:nth-child(19):before {
+  animation-delay: -950ms;
+}
+.item:nth-child(20) {
+  animation-delay: -1000ms;
+}
+.item:nth-child(20):before {
+  animation-delay: -1000ms;
+}
+.item:nth-child(21) {
+  animation-delay: -1050ms;
+}
+.item:nth-child(21):before {
+  animation-delay: -1050ms;
+}
+.item:nth-child(22) {
+  animation-delay: -1100ms;
+}
+.item:nth-child(22):before {
+  animation-delay: -1100ms;
+}
+.item:nth-child(23) {
+  animation-delay: -1150ms;
+}
+.item:nth-child(23):before {
+  animation-delay: -1150ms;
+}
+.item:nth-child(24) {
+  animation-delay: -1200ms;
+}
+.item:nth-child(24):before {
+  animation-delay: -1200ms;
+}
+.item:nth-child(25) {
+  animation-delay: -1250ms;
+}
+.item:nth-child(25):before {
+  animation-delay: -1250ms;
+}
+.item:nth-child(26) {
+  animation-delay: -1300ms;
+}
+.item:nth-child(26):before {
+  animation-delay: -1300ms;
+}
+.item:nth-child(27) {
+  animation-delay: -1350ms;
+}
+.item:nth-child(27):before {
+  animation-delay: -1350ms;
+}
+.item:nth-child(28) {
+  animation-delay: -1400ms;
+}
+.item:nth-child(28):before {
+  animation-delay: -1400ms;
+}
+.item:nth-child(29) {
+  animation-delay: -1450ms;
+}
+.item:nth-child(29):before {
+  animation-delay: -1450ms;
+}
+.item:nth-child(30) {
+  animation-delay: -1500ms;
+}
+.item:nth-child(30):before {
+  animation-delay: -1500ms;
+}
+.item:nth-child(31) {
+  animation-delay: -1550ms;
+}
+.item:nth-child(31):before {
+  animation-delay: -1550ms;
+}
+.item:nth-child(32) {
+  animation-delay: -1600ms;
+}
+.item:nth-child(32):before {
+  animation-delay: -1600ms;
+}
+.item:nth-child(33) {
+  animation-delay: -1650ms;
+}
+.item:nth-child(33):before {
+  animation-delay: -1650ms;
+}
+.item:nth-child(34) {
+  animation-delay: -1700ms;
+}
+.item:nth-child(34):before {
+  animation-delay: -1700ms;
+}
+.item:nth-child(35) {
+  animation-delay: -1750ms;
+}
+.item:nth-child(35):before {
+  animation-delay: -1750ms;
+}
+.item:nth-child(36) {
+  animation-delay: -1800ms;
+}
+.item:nth-child(36):before {
+  animation-delay: -1800ms;
+}
+.item:nth-child(37) {
+  animation-delay: -1850ms;
+}
+.item:nth-child(37):before {
+  animation-delay: -1850ms;
+}
+.item:nth-child(38) {
+  animation-delay: -1900ms;
+}
+.item:nth-child(38):before {
+  animation-delay: -1900ms;
+}
+.item:nth-child(39) {
+  animation-delay: -1950ms;
+}
+.item:nth-child(39):before {
+  animation-delay: -1950ms;
+}
+.item:nth-child(40) {
+  animation-delay: -2000ms;
+}
+.item:nth-child(40):before {
+  animation-delay: -2000ms;
+}
+.item:nth-child(41) {
+  animation-delay: -2050ms;
+}
+.item:nth-child(41):before {
+  animation-delay: -2050ms;
+}
+.item:nth-child(42) {
+  animation-delay: -2100ms;
+}
+.item:nth-child(42):before {
+  animation-delay: -2100ms;
+}
+.item:nth-child(43) {
+  animation-delay: -2150ms;
+}
+.item:nth-child(43):before {
+  animation-delay: -2150ms;
+}
+.item:nth-child(44) {
+  animation-delay: -2200ms;
+}
+.item:nth-child(44):before {
+  animation-delay: -2200ms;
+}
+.item:nth-child(45) {
+  animation-delay: -2250ms;
+}
+.item:nth-child(45):before {
+  animation-delay: -2250ms;
+}
+.item:nth-child(46) {
+  animation-delay: -2300ms;
+}
+.item:nth-child(46):before {
+  animation-delay: -2300ms;
+}
+.item:nth-child(47) {
+  animation-delay: -2350ms;
+}
+.item:nth-child(47):before {
+  animation-delay: -2350ms;
+}
+.item:nth-child(48) {
+  animation-delay: -2400ms;
+}
+.item:nth-child(48):before {
+  animation-delay: -2400ms;
+}
+.item:nth-child(49) {
+  animation-delay: -2450ms;
+}
+.item:nth-child(49):before {
+  animation-delay: -2450ms;
+}
+.item:nth-child(50) {
+  animation-delay: -2500ms;
+}
+.item:nth-child(50):before {
+  animation-delay: -2500ms;
+}
+.item:nth-child(51) {
+  animation-delay: -2550ms;
+}
+.item:nth-child(51):before {
+  animation-delay: -2550ms;
+}
+.item:nth-child(52) {
+  animation-delay: -2600ms;
+}
+.item:nth-child(52):before {
+  animation-delay: -2600ms;
+}
+.item:nth-child(53) {
+  animation-delay: -2650ms;
+}
+.item:nth-child(53):before {
+  animation-delay: -2650ms;
+}
+.item:nth-child(54) {
+  animation-delay: -2700ms;
+}
+.item:nth-child(54):before {
+  animation-delay: -2700ms;
+}
+.item:nth-child(55) {
+  animation-delay: -2750ms;
+}
+.item:nth-child(55):before {
+  animation-delay: -2750ms;
+}
+.item:nth-child(56) {
+  animation-delay: -2800ms;
+}
+.item:nth-child(56):before {
+  animation-delay: -2800ms;
+}
+.item:nth-child(57) {
+  animation-delay: -2850ms;
+}
+.item:nth-child(57):before {
+  animation-delay: -2850ms;
+}
+.item:nth-child(58) {
+  animation-delay: -2900ms;
+}
+.item:nth-child(58):before {
+  animation-delay: -2900ms;
+}
+.item:nth-child(59) {
+  animation-delay: -2950ms;
+}
+.item:nth-child(59):before {
+  animation-delay: -2950ms;
+}
+.item:nth-child(60) {
+  animation-delay: -3000ms;
+}
+.item:nth-child(60):before {
+  animation-delay: -3000ms;
+}
