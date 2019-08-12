@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "preserve",
+    "checkJs": false,
+    "baseUrl": "src/"
+  },
+  "exclude": ["node_modules"]
+}

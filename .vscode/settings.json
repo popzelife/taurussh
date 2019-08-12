@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "*.new.jsx": "javascriptreact"
+  },
+  "workbench.colorCustomizations": {
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.preferences.importModuleSpecifier": "non-relative"
+  },
+  "npm.packageManager": "yarn",
+  "tslint.packageManager": "yarn",
+  "eslint.packageManager": "yarn"
+}
