@@ -4,7 +4,7 @@
     "target": "es5",
     "allowJs": true,
     "checkJs": false,
-    "jsx": "preserve",
+    "jsx": "react",
     "baseUrl": "src/",
     "outDir": "build/",
     "lib": [

@@ -9,14 +9,14 @@ function getLetterCount(str: string, prevLen: number, reverse?: boolean): number
   }
 
   return x;
-};
+}
 
 function substringParser(str: string, len: number): string {
-  let res = str.substring(0, len);
+  const res = str.substring(0, len);
   return res.replace(/</gi, '').replace(/>/gi, '');
-};
+}
 
-function consoleText(words: string[], id: string, colors: string[] = ['#fff']):void {
+function consoleText(words: string[], id: string, colors: string[] = ['#fff']): void {
   const cons = document.getElementById(id);
   const target = document.getElementById(`${id}-text`);
   let letterCount = 1;
@@ -28,13 +28,13 @@ function consoleText(words: string[], id: string, colors: string[] = ['#fff']):v
   if (!target || !cons) return;
   target.setAttribute('style', `color:${colors[0]}`);
 
-  window.setInterval(() => {
+  window.setInterval((): void => {
     if (letterCount === 0 && waiting === false) {
       waiting = true;
       reverse = false;
       target.innerHTML = substringParser(words[0], letterCount);
 
-      window.setTimeout(() => {
+      window.setTimeout((): void => {
         const usedColor = colors.shift() || '#fff';
         const usedWord = words.shift() || '';
 
@@ -49,7 +49,7 @@ function consoleText(words: string[], id: string, colors: string[] = ['#fff']):v
       waiting = true;
       reverse = true;
 
-      window.setTimeout(() => {
+      window.setTimeout((): void => {
         x = getLetterCount(words[0], letterCount, true);
         letterCount += x;
         waiting = false;
@@ -61,7 +61,7 @@ function consoleText(words: string[], id: string, colors: string[] = ['#fff']):v
     }
   }, 120);
 
-  window.setInterval(() => {
+  window.setInterval((): void => {
     if (visible === true) {
       cons.className = 'console-underscore hidden';
       visible = false;
@@ -70,8 +70,6 @@ function consoleText(words: string[], id: string, colors: string[] = ['#fff']):v
       visible = true;
     }
   }, 400);
-};
+}
 
-export {
-  consoleText,
-};
+export default consoleText;

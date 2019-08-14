@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import './style.scss';
 
-export interface Props {
+type Props = Readonly <{
   seed: number;
-}
+}>
 
-function Pusle({ seed }: Props) {
+function Pusle({ seed }: Props): JSX.Element {
   const items = [];
 
   for (let i = 0; i < 60; i += 1) {
