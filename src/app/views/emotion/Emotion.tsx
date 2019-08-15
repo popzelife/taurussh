@@ -16,8 +16,20 @@ function Emotion(): JSX.Element {
   return (
     <>
       <div className="App">
-        <Pulse seed={3} />
-        <Pulse seed={2} style={{ paddingLeft: '0.8rem' }} />
+        <Pulse
+          seed={8}
+          height="50vh"
+        />
+        <Pulse
+          seed={7}
+          height="50vh"
+          style={{ paddingLeft: '0.8rem' }}
+        />
+        <Pulse
+          seed={6}
+          height="50vh"
+          style={{ paddingLeft: '0.8rem' }}
+        />
       </div>
       <div className="App-modal">
         <Console

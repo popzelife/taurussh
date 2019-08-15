@@ -1,15 +1,8 @@
-:root {
-  --pulse-height: 22em;
-  --pulse-main-color: rgba(255, 255, 255, 0.15);
-  --pulse-secondary-color: rgba(255, 255, 255, 0.05);
-  --pulse-anim-time: 3s;
-}
-
 .container {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  width: 50vw;
+  width: 100%;
 }
 
 .item {
