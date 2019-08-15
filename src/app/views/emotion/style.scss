@@ -6,14 +6,13 @@
   overflow: hidden;
 }
 
-.App-logo {
-  height: 60vh;
-  padding: 10vh;
-}
-
-.App-header {
-  height: 100vh;
+.App-modal {
   color: white;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App-title {

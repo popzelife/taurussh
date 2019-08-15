@@ -17,16 +17,14 @@ function Emotion(): JSX.Element {
     <>
       <div className="App">
         <Pulse seed={3} />
-        <Pulse seed={2} />
+        <Pulse seed={2} style={{ paddingLeft: '0.8rem' }} />
       </div>
       <div className="App-modal">
-        <header className="App-header">
-          <Console
-            className="App-title"
-            id="console"
-            text={consoleText}
-          />
-        </header>
+        <Console
+          className="App-title"
+          id="console"
+          text={consoleText}
+        />
       </div>
     </>
   );
