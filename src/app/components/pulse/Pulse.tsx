@@ -3,9 +3,10 @@ import './style.scss';
 
 type Props = Readonly <{
   seed: number;
+  style?: React.CSSProperties;
 }>
 
-function Pusle({ seed }: Props): JSX.Element {
+function Pusle({ seed, style }: Props): JSX.Element {
   const items = [];
 
   for (let i = 0; i < 60; i += 1) {
@@ -13,7 +14,7 @@ function Pusle({ seed }: Props): JSX.Element {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={style}>
       {items}
     </div>
   );
