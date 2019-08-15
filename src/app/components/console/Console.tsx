@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import consoleText from '../../utils/consoleText';
+import consoleText from 'app/utils/consoleText';
 
 import './style.scss';
 
