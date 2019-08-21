@@ -1,3 +1,8 @@
+/**
+ * Variables are defined locally in style props
+ * To enable customization per components
+ */
+
 .container {
   display: flex;
   flex-direction: row-reverse;
@@ -8,7 +13,7 @@
 .item {
   position: relative;
   width: 0.125em;
-  height: 10em;
+  height: var(--pulse-initial-height);
   background-color: rgba(255, 255, 255, 0.1);
   animation: wave var(--pulse-anim-time) infinite ease-in-out;
 

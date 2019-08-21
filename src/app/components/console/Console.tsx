@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import consoleText from 'app/utils/consoleText';
 
-import './style.scss';
+import './styles.scss';
 
 type Props = Readonly <{
   text: string[];

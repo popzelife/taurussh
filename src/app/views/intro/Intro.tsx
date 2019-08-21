@@ -3,7 +3,7 @@ import Pulse from 'app/components/pulse/Pulse';
 import Console from 'app/components/console/Console';
 
 import logo from 'assets/logo/taurus-logo.svg';
-import './style.scss';
+import './styles.scss';
 
 function Intro(): JSX.Element {
   const consoleText = [
