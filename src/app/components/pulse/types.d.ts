@@ -9,15 +9,17 @@ interface CSSPropertiesPulseVariables extends React.CSSProperties {
   '--pulse-anim-time'?: string;
 }
 
+type FormatedHeight = [number, number, number] | undefined;
+
+type FormatedBaseUnit = [string, string];
+
 type FormattedProps = Readonly <{
   seed: number;
+  baseUnit: FormatedBaseUnit;
   style?: React.CSSProperties;
-  baseUnit?: string;
-  height?: [number, number, number];
-  initialHeight?: [number, number, number];
+  height?: FormatedHeight;
+  initialHeight?: FormatedHeight;
   mainColor?: string;
   secondaryColor?: string;
   animTime?: string;
 }>
-
-type FormatedHeight = [number, number, number] | undefined;

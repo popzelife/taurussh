@@ -11,6 +11,15 @@ function getLetterCount(str: string, prevLen: number, reverse?: boolean): number
   return x;
 }
 
+/**
+ * Parse a string and return a substring
+ * Deleting '<' and '>' characters from string
+ *
+ * @param {string} str String to parse
+ * @param {number} len Length for the substring
+ * @return {string} The new line parsed
+ */
+
 function substringParser(str: string, len: number): string {
   const res = str.substring(0, len);
   return res.replace(/</gi, '').replace(/>/gi, '');

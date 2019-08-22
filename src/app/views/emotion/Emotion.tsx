@@ -13,6 +13,8 @@ function Emotion(): JSX.Element {
     'and designer <👨‍🎨>',
   ];
 
+  const pulses =
+
   return (
     <>
       <div className="App">
@@ -20,7 +22,7 @@ function Emotion(): JSX.Element {
           seed={9}
           height={75}
           initialHeight={25}
-          baseUnit="vh"
+          baseUnit="px"
         />
         {/* <Pulse
           seed={8}
@@ -32,15 +34,15 @@ function Emotion(): JSX.Element {
         <Pulse
           seed={7}
           initialHeight={25}
-          height={[75, 50, 75]}
-          baseUnit="vh"
+          height={[75, 300, 75]}
+          baseUnit="px"
           style={{ paddingLeft: '0.45rem' }}
         />
         <Pulse
           seed={6}
           height={75}
           initialHeight={25}
-          baseUnit="vh"
+          baseUnit="px"
           style={{ paddingLeft: '0.45rem' }}
         />
       </div>

@@ -7,7 +7,7 @@ import './styles.scss';
 type Props = Readonly <{
   seed: number;
   style?: React.CSSProperties;
-  baseUnit?: string;
+  baseUnit?: string | [string, string];
   height?: number | [number, number, number];
   initialHeight?: number | [number, number, number];
   mainColor?: string;
@@ -28,6 +28,35 @@ const varStyle: CSSPropertiesPulseVariables = {
  * Should check https://d3js.org/
 */
 
+export function circle(fraction: number): number {
+  return 1 - Math.sin(Math.acos(fraction));
+}
+
+export function quad(fraction: number): number {
+  return fraction ** 2;
+}
+
+function emulateEaseInOut(i: number, func: Function, length = 15): number {
+  const fraction = i <= length ? i : length - (i - length);
+  return func(fraction / length);
+}
+
+function getStepAnimation(height: [number, number, number], i: number): number {
+  const step = i <= 30
+    ? (height[1] - height[0]) / 30
+    : (height[1] - height[2]) / 30;
+  const dynamicHeight = i <= 30
+    ? height[0] + (step * i)
+    : height[1] - (step * (i - 30));
+
+  const timeline = i - ((i % 2) / 2);
+  const delta = timeline <= 30
+    ? emulateEaseInOut(timeline, quad)
+    : emulateEaseInOut(timeline - 30, quad);
+
+  return dynamicHeight + delta * 10; // ((dynamicHeight / 10) * delta);
+}
+
 function addAnimationKeyframes(props: FormattedProps): void {
   const {
     seed,
@@ -40,17 +69,11 @@ function addAnimationKeyframes(props: FormattedProps): void {
     let keyFrames = '';
 
     for (let i = 0; i < 60; i += 1) {
-      const step = i <= 30
-        ? (height[1] - height[0]) / 30
-        : (height[1] - height[2]) / 30;
-      const dynamicHeight = i <= 30
-        ? height[0] + (step * i)
-        : height[1] - (step * (i - 30));
-
+      const dynamicHeight = getStepAnimation(height, i);
       keyFrames += `
 @keyframes wave-${seed}-${i} {
   50% {
-    height: ${dynamicHeight}${baseUnit};
+    height: ${dynamicHeight}${baseUnit[0]};
   }
 }
 `;
@@ -74,8 +97,8 @@ function getComputedStyle(props: FormattedProps): CSSPropertiesPulseVariables {
   } = props;
   const computedStyle = _.merge(style, varStyle);
 
-  if (initialHeight) computedStyle['--pulse-initial-height'] = `${initialHeight[0]}${baseUnit}`;
-  if (height) computedStyle['--pulse-height'] = `${height[0]}${baseUnit}`;
+  if (height) computedStyle['--pulse-height'] = `${height[0]}${baseUnit[0]}`;
+  if (initialHeight) computedStyle['--pulse-initial-height'] = `${initialHeight[0]}${baseUnit[1]}`;
   if (mainColor) computedStyle['--pulse-main-color'] = mainColor;
   if (secondaryColor) computedStyle['--pulse-secondary-color'] = secondaryColor;
   if (animTime) computedStyle['--pulse-anim-time'] = animTime;
@@ -85,7 +108,7 @@ function getComputedStyle(props: FormattedProps): CSSPropertiesPulseVariables {
 
 function formatProps(props: Props): FormattedProps {
   const { height, initialHeight, baseUnit } = props;
-  const formatedBaseUnit = baseUnit || 'em';
+  const dummyBaseUnit = baseUnit || ['em', 'em'];
 
   const formatedHeight: FormatedHeight = typeof height === 'number'
     ? [height, height, height]
@@ -93,6 +116,9 @@ function formatProps(props: Props): FormattedProps {
   const formatedInitialHeight: FormatedHeight = typeof initialHeight === 'number'
     ? [initialHeight, initialHeight, initialHeight]
     : initialHeight;
+  const formatedBaseUnit: FormatedBaseUnit = typeof dummyBaseUnit === 'string'
+    ? [dummyBaseUnit, dummyBaseUnit]
+    : dummyBaseUnit;
 
   return {
     ...props,
