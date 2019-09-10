@@ -11,13 +11,13 @@ type Props = Readonly <{
   contentEditable?: boolean;
 }>
 
-class Intro extends Component<Props> {
-  public componentDidMount(): void {
+class Console extends Component<Props> {
+  componentDidMount(): void {
     const { text, id, colors } = this.props;
     consoleText(text, id, colors);
   }
 
-  public render(): JSX.Element {
+  render(): JSX.Element {
     const { className, id, contentEditable } = this.props;
 
     return (
@@ -29,4 +29,4 @@ class Intro extends Component<Props> {
   }
 }
 
-export default Intro;
+export default Console;

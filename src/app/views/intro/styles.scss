@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .App {
   display: flex;
   height: 100vh;
@@ -7,7 +11,7 @@
 }
 
 .App-logo {
-  height: 60vh;
+  height: 50vh;
   min-width: 20rem;
   padding: 10vh;
 }
@@ -15,12 +19,55 @@
 .App-header {
   height: 100vh;
   color: white;
+  z-index: 10;
 }
 
 .App-title {
   font-weight: bold;
   font-variation-settings: 'wght' 600;
   font-size: 10vh;
+  line-height: 10.5vh;
   letter-spacing: -.1rem;
   margin: 1vh;
+}
+
+.App-social {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 10vh;
+}
+
+// Todo check import of css files as it seems to happen twice
+// and it overides media queries
+@media (max-aspect-ratio: 4/3) {
+  .App {
+    flex-direction: column;
+  }
+  .App .container {
+    overflow: hidden;
+    bottom: -33vh;
+    position: absolute;
+    &:first-of-type {
+      bottom: unset;
+      top: -33vh;
+    }
+  }
+  .App-header {
+    height: unset !important;
+    width: 100vw;
+    margin-top: 10vh;
+  }
+  .App-logo {
+    height: unset !important;
+    width: 65vw !important;
+    min-width: unset !important;
+    padding: 5vw !important;
+    max-height: 40vh !important;
+  }
+  .App-title {
+    font-size: 2rem !important;
+    line-height: 2.5rem !important;
+    margin: .1rem !important;
+  }
 }

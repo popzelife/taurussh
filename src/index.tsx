@@ -5,32 +5,37 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Intro from 'app/views/intro/Intro';
 import Emotion from 'app/views/emotion/Emotion';
-
-import * as serviceWorker from './serviceWorker';
+import Sprites from 'app/views/sprites/Sprites';
 
 import 'styles/index.scss';
 
+import * as serviceWorker from './serviceWorker';
+
 const App = (): JSX.Element => (
-  <Router>
-    <Route
-      render={({ location }): JSX.Element => (
-        <AnimatePresence exitBeforeEnter initial={false}>
-          <Switch location={location} key={location.pathname}>
-            <Route
-              exact
-              path="/"
-              component={Intro}
-            />
-            <Route
-              exact
-              path="/emotion"
-              component={Emotion}
-            />
-          </Switch>
-        </AnimatePresence>
-      )}
-    />
-  </Router>
+  <>
+    <Sprites />
+
+    <Router>
+      <Route
+        render={({ location }): JSX.Element => (
+          <AnimatePresence exitBeforeEnter initial={false}>
+            <Switch location={location} key={location.pathname}>
+              <Route
+                exact
+                path="/"
+                component={Intro}
+              />
+              <Route
+                exact
+                path="/emotion"
+                component={Emotion}
+              />
+            </Switch>
+          </AnimatePresence>
+        )}
+      />
+    </Router>
+  </>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

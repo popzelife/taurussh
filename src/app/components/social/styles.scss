@@ -1,0 +1,10 @@
+.Social svg {
+  height: 5vh;
+  width: 100%;
+  opacity: .5;
+  transition: opacity .3s ease-in-out;
+
+  &:hover {
+    opacity: .8;
+  }
+}
