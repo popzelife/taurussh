@@ -3,44 +3,44 @@
  * To enable customization per components
  */
 
-.container {
+.pulse-container {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
-}
 
-.item {
-  position: relative;
-  width: 0.125em;
-  height: var(--pulse-initial-height);
-  background-color: rgba(255, 255, 255, 0.1);
-  animation: wave var(--pulse-anim-time) infinite ease-in-out;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 1px;
-    transform: translateX(-50%);
-    border-radius: 50%;
+  .item {
+    position: relative;
+    width: 0.125em;
+    height: var(--pulse-initial-height);
     background-color: rgba(255, 255, 255, 0.1);
-    animation: pulse var(--pulse-anim-time) infinite ease-in-out;
-  }
+    animation: wave var(--pulse-anim-time) infinite ease-in-out;
 
-  &:nth-child(even) {
-    align-self: flex-end;
-    &:before {
-      top: 0;
-      bottom: auto;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 1px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      animation: pulse var(--pulse-anim-time) infinite ease-in-out;
     }
-  }
 
-  @for $n from 1 through 60 {
-    &:nth-child(#{$n}) {
-      animation-delay: -#{50 * $n}ms;
+    &:nth-child(even) {
+      align-self: flex-end;
       &:before {
+        top: 0;
+        bottom: auto;
+      }
+    }
+
+    @for $n from 1 through 60 {
+      &:nth-child(#{$n}) {
         animation-delay: -#{50 * $n}ms;
+        &:before {
+          animation-delay: -#{50 * $n}ms;
+        }
       }
     }
   }
@@ -64,5 +64,27 @@
 @keyframes wave {
   50% {
     height: var(--pulse-height);
+  }
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .App .pulse-container {
+    overflow: hidden;
+    bottom: -33vh;
+    position: absolute;
+    &:first-of-type {
+      .item:nth-child(2n) {
+        opacity: 0;
+      }
+
+      bottom: unset;
+      top: -33vh;
+    }
+
+    &:not(:first-of-type) {
+      .item:nth-child(2n+1) {
+        opacity: 0;
+      }
+    }
   }
 }

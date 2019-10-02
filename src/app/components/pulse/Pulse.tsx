@@ -153,7 +153,7 @@ const Pusle = (props: Props): JSX.Element => {
   return (
     <div
       id={`pulse-seed-${seed}`}
-      className="container"
+      className="pulse-container"
       style={computedStyle}
     >
       {items}

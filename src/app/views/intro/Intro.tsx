@@ -41,7 +41,7 @@ function Intro(): JSX.Element {
         <div className="App-social">
           <Social
             type="github"
-            link="https://github.com/Kant1-0"
+            link="https://github.com/popzelife"
             width="5vh"
             fill="#f08"
           />

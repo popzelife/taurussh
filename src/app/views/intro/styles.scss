@@ -29,6 +29,7 @@ body {
   line-height: 10.5vh;
   letter-spacing: -.1rem;
   margin: 1vh;
+  white-space: nowrap;
 }
 
 .App-social {
@@ -43,15 +44,6 @@ body {
 @media (max-aspect-ratio: 4/3) {
   .App {
     flex-direction: column;
-  }
-  .App .container {
-    overflow: hidden;
-    bottom: -33vh;
-    position: absolute;
-    &:first-of-type {
-      bottom: unset;
-      top: -33vh;
-    }
   }
   .App-header {
     height: unset !important;
