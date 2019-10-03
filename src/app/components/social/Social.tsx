@@ -9,6 +9,7 @@ type Props = Readonly <{
   link: string;
   fill?: string;
   width?: string;
+  shadowColor?: string;
 }>
 
 const SocialTemplate = ({ id }: { id: IdProps }): JSX.Element => (
@@ -20,17 +21,33 @@ const Social = ({
   link,
   fill = 'white',
   width = '30px',
-}: Props): JSX.Element => (
-  <div className="Social" style={{ fill, width }}>
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <SocialTemplate id={type} />
-    </a>
-  </div>
-);
+  shadowColor = fill,
+}: Props): JSX.Element => {
+  const shadowClass = `Social-${shadowColor.replace(/\(|\)|#|,|\.|%/, '-')}`;
+  const style = document.createElement('style');
+  style.type = 'text/css';
+  style.innerHTML = `
+  .${shadowClass} svg {
+    filter: drop-shadow(1px 1px 20px ${shadowColor});
+  }
+  .${shadowClass} svg:hover {
+    filter: drop-shadow(1px 1px 10px ${shadowColor});
+  }
+`;
+  document.getElementsByTagName('head')[0].appendChild(style);
+
+  return (
+    <div className={`Social ${shadowClass}`} style={{ fill, width }}>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SocialTemplate id={type} />
+      </a>
+    </div>
+  );
+};
 
 
 export default Social;

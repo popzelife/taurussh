@@ -11,13 +11,15 @@ body {
 }
 
 .App-logo {
-  height: 50vh;
-  min-width: 20rem;
-  padding: 10vh;
+  width: 20vw;
 }
 
 .App-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   height: 100vh;
+  min-width: 33vw;
   color: white;
   z-index: 10;
 }
@@ -36,7 +38,6 @@ body {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  margin-top: 10vh;
 }
 
 // Todo check import of css files as it seems to happen twice
@@ -45,21 +46,12 @@ body {
   .App {
     flex-direction: column;
   }
-  .App-header {
-    height: unset !important;
-    width: 100vw;
-    margin-top: 10vh;
-  }
   .App-logo {
-    height: unset !important;
     width: 65vw !important;
-    min-width: unset !important;
-    padding: 5vw !important;
     max-height: 40vh !important;
   }
   .App-title {
-    font-size: 2rem !important;
-    line-height: 2.5rem !important;
-    margin: .1rem !important;
+    font-size: 6vh !important;
+    line-height: 6.5vh !important;
   }
 }

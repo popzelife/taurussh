@@ -40,22 +40,22 @@ function Intro(): JSX.Element {
 
         <div className="App-social">
           <Social
-            type="github"
-            link="https://github.com/popzelife"
-            width="5vh"
-            fill="#f08"
-          />
-          <Social
             type="linkedin"
             link="https://www.linkedin.com/in/popzelife/"
             width="5vh"
-            fill="#1d3144"
+            fill="#974297"
+          />
+          <Social
+            type="github"
+            link="https://github.com/popzelife"
+            width="5vh"
+            fill="#796cc5"
           />
           <Social
             type="twitter"
             link="https://twitter.com/PopzeLife"
             width="5vh"
-            fill="#09f"
+            fill="#539ffc"
           />
         </div>
       </header>
