@@ -9,8 +9,18 @@ body {
   font-family: "Source Sans Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgb(0, 0, 0)) repeat scroll 0% 0%, rgba(0, 0, 0, 0) linear-gradient(180deg, rgb(255, 0, 136), rgb(0, 153, 255)) repeat scroll 0% 0%;
+  animation: mouvance 10s ease-in-out 1s infinite alternate;
 }
 
 .hidden {
   opacity: 0;
+}
+
+@keyframes mouvance {
+  @for $n from 0 through 100 {
+    #{$n}% {
+      background: linear-gradient(#{$n * 1.8 + 90}deg, rgba(0, 0, 0, 0.8), rgb(0, 0, 0)) repeat scroll 0% 0%, rgba(0, 0, 0, 0) linear-gradient(#{$n * 1.8 + 180}deg, rgb(255, 0, 136), rgb(0, 153, 255)) repeat scroll 0% 0%;
+    }
+  }
 }
