@@ -68,3 +68,25 @@
     }
   }
 }
+
+@media (max-aspect-ratio: 4/3) {
+  .App .pulse-container {
+    overflow: hidden;
+    bottom: -18vh;
+    position: fixed;
+    &:first-of-type {
+      .item:nth-child(2n) {
+        opacity: 0;
+      }
+
+      bottom: unset;
+      top: -33vh;
+    }
+
+    &:not(:first-of-type) {
+      .item:nth-child(2n+1) {
+        opacity: 0;
+      }
+    }
+  }
+}
