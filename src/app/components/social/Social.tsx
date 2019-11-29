@@ -28,10 +28,10 @@ const Social = ({
   style.type = 'text/css';
   style.innerHTML = `
   .${shadowClass} svg {
-    filter: drop-shadow(1px 1px 20px ${shadowColor});
+    filter: drop-shadow(0 4px 50px ${shadowColor});
   }
   .${shadowClass} svg:hover {
-    filter: drop-shadow(1px 1px 10px ${shadowColor});
+    filter: drop-shadow(0 4px 30px ${shadowColor});
   }
 `;
   document.getElementsByTagName('head')[0].appendChild(style);

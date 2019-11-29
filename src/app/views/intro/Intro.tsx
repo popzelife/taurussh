@@ -43,19 +43,19 @@ function Intro(): JSX.Element {
             type="linkedin"
             link="https://www.linkedin.com/in/popzelife/"
             width="5vh"
-            fill="#974297"
+            fill="#fff"
           />
           <Social
             type="github"
             link="https://github.com/popzelife"
             width="5vh"
-            fill="#796cc5"
+            fill="#fff"
           />
           <Social
             type="twitter"
             link="https://twitter.com/PopzeLife"
             width="5vh"
-            fill="#539ffc"
+            fill="#fff"
           />
         </div>
       </header>
